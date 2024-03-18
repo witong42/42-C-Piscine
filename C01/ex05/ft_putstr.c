@@ -6,7 +6,7 @@
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:32:02 by witong            #+#    #+#             */
-/*   Updated: 2024/03/16 16:37:23 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/18 12:54:23 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -22,3 +22,10 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
+/*
+int	main(void)
+{
+	ft_putstr("witong42\n");
+	return (0);
+}
+*/

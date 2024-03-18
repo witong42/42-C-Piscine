@@ -6,11 +6,25 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 17:34:06 by witong            #+#    #+#             */
-/*   Updated: 2024/03/14 19:18:27 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/18 13:12:50 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include <stdio.h>
+//
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
+/*
+int	main(void)
+{
+	int	n;
+	int	*nbr;
+
+	nbr = &n;
+	ft_ft(nbr);
+	printf("%d", n);
+	return (0);
+}
+*/
