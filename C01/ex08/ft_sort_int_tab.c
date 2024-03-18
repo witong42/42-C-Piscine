@@ -1,39 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:01:43 by witong            #+#    #+#             */
-/*   Updated: 2024/03/18 15:10:30 by witong           ###   ########.fr       */
+/*   Created: 2024/03/18 14:09:40 by witong            #+#    #+#             */
+/*   Updated: 2024/03/18 14:29:59 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	unsigned int	i;
+	int	i;
+	int	rev_i;
+	int	swap;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	rev_i = size - 1;
+	while (i < size / 2)
 	{
-		dest[i] = src[i];
+		while (tab[i] > tab[rev_i])
+		{
+			swap = tab[i];
+			tab[i] = tab[rev_i];
+			tab[rev_i] = swap;
+		}
 		i++;
+		rev_i--;
 	}
-	dest[i] = '\0';
-	return (dest);
 }
 /*
 int	main(void)
 {
-	unsigned int	size;
-	char			str_dest[] = "Piscine 42\n";
-	char			str_src[] = "Hello World!\n";
+	int	tab[6];
+	int	size;
+	int	i;
 
-	size = 13;
-	ft_strncpy(str_dest, str_src, size);
-	printf("%s", str_dest);
+	tab[0] = 4;
+	tab[1] = 2;
+	tab[2] = 3;
+	tab[3] = 1;
+	tab[4] = 5;
+	tab[5] = 0;
+	size = 6;
+	i = 0;
+	ft_sort_int_tab(tab, size);
+	while (i < size)
+	{
+		printf("Id %d, Int %d\n", i, tab[i]);
+		i++;
+	}
+	return (0);
 }
 */
