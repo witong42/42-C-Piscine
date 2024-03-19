@@ -6,8 +6,13 @@
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:36:13 by witong            #+#    #+#             */
-/*   Updated: 2024/03/19 11:36:15 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/19 18:37:09 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
+char	*ft_strstr(char *str, char *to_find)
+{
+
+}
