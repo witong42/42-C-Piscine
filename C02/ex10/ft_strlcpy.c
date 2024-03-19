@@ -1,5 +1,17 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 11:05:10 by witong            #+#    #+#             */
+/*   Updated: 2024/03/19 11:08:08 by witong           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+//#include <stdio.h>
+//
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
@@ -23,7 +35,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	dest[i] = '\0';
 	return (len);
 }
-
+/*
 int	main(void)
 {
 	char	src[] = "I love cheese and burgers";
@@ -35,3 +47,4 @@ int	main(void)
 	printf("Length of the source string: %d\n", len);
 	return (0);
 }
+*/

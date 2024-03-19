@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 14:38:57 by witong            #+#    #+#             */
-/*   Updated: 2024/03/19 10:39:31 by witong           ###   ########.fr       */
+/*   Created: 2024/03/19 11:35:55 by witong            #+#    #+#             */
+/*   Updated: 2024/03/19 16:01:26 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (src[i])
+	j = 0;
+	while (dest[i])
 	{
-		dest[i] = src[i];
 		i++;
+	}
+	while (src[j] && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
 	dest[i] = '\0';
 	return (dest);
@@ -28,11 +35,11 @@ char	*ft_strcpy(char *dest, char *src)
 /*
 int	main(void)
 {
-	char	str_dest[] = "Piscine 42\n";
-	char	str_src[] = "Hello World!\n";
+	char	a[10] = "William ";
+	char	b[20] = "Abracadabra";
 
-	ft_strcpy(str_dest, str_src);
-	printf("%s", str_dest);
+	ft_strncat(a, b, 10);
+	printf("%s", a);
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 15:46:11 by witong            #+#    #+#             */
-/*   Updated: 2024/03/18 15:58:31 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/19 12:43:05 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 //
 int	ft_str_is_alpha(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		if ((str[i] >= 'A' && str[i] <= 'Z')
+			|| (str[i] >= 'a' && str[i] <= 'z'))
 		{
 			i++;
 		}

@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 15:01:43 by witong            #+#    #+#             */
-/*   Updated: 2024/03/19 17:05:26 by witong           ###   ########.fr       */
+/*   Created: 2024/03/19 11:33:51 by witong            #+#    #+#             */
+/*   Updated: 2024/03/19 14:04:57 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (s1[i] - s2[i]);
 }
 /*
 int	main(void)
 {
-	char	dest[30] = "Piscine 42. Cheeseburger\n";
-	char	src[15] = "Hello World!\n";
+	char	s1[] = "Willy";
+	char	s2[] = "William";
+	int		result;
 
-	ft_strncpy(dest, src, 20);
-	printf("%s", dest);
+	result = ft_strcmp(s1, s2);
+	printf("%d\n", result);
+	if (result < 0)
+	{
+		printf("%s is less than %s\n", s1, s2);
+	}
+	else if (result > 0)
+	{
+		printf("%s is greater than %s\n", s1, s2);
+	}
+	else
+	{
+		printf("%s is equal to %s\n", s1, s2);
+	}
 	return (0);
 }
 */
