@@ -6,7 +6,7 @@
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:36:13 by witong            #+#    #+#             */
-/*   Updated: 2024/03/19 18:37:09 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/20 15:47:25 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strstr(char *str, char *to_find)
 	i = 0;
 	if (to_find[0] == '\0')
 	{
-		return(str);
+		return (str);
 	}
 	while (str[i])
 	{
