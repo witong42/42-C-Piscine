@@ -6,49 +6,51 @@
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:36:40 by witong            #+#    #+#             */
-/*   Updated: 2024/03/19 19:45:28 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/20 15:42:31 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
+//#include <bsd/string.h>
 //
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int     i;
-	unsigned int     j;
+	unsigned int	len_dest;
+	unsigned int	len_src;
+	unsigned int	i;
 
+	len_dest = 0;
+	len_src = 0;
 	i = 0;
-	j = 0;
-	while(dest[i] && i < size)
+	while (dest[len_dest])
 	{
+		len_dest++;
+	}
+	while (src[len_src])
+	{
+		len_src++;
+	}
+	while (src[i] && (len_dest + i < size -1))
+	{
+		dest[len_dest + i] = src[i];
 		i++;
 	}
-	while(src[j] && (i + j < size - 1))
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	if (i < size)
-	{
-		dest[i + j] = '\0';
-	}
-	while (src[j])
-	{
-		j++;
-	}
-	return (i + j);
+	dest[len_dest + i] = '\0';
+	if (len_dest > size)
+		return (len_src + size);
+	else
+		return (len_dest + len_src);
 }
 /*
 int	main(void)
 {
-	char dest[15] = "Hello,";
-	char src[10] = "World!";
-	unsigned int		size = 18;
-	unsigned int	result;
+	char src1[10] = "William";
+	char dest1[10] = "4242";
+	char src[10] = "William";
+	char dest[10] = "4242";
 
-	result = ft_strlcat(dest, src, size);
-	printf("%s", dest);
-	printf("Length of resulting string %u\n", result);
+	printf("strlcat: %zu\n", strlcat(dest1, src1, 8));
+	printf("ft_strlcat: %u", ft_strlcat(dest, src, 8));
 	return (0);
 }
 */
