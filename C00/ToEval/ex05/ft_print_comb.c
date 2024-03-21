@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 17:32:41 by witong            #+#    #+#             */
-/*   Updated: 2024/03/21 11:42:54 by witong           ###   ########.fr       */
+/*   Created: 2024/03/21 12:10:31 by witong            #+#    #+#             */
+/*   Updated: 2024/03/21 12:37:54 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
-//
-void	ft_putnbr(int nb)
-{
-	char	display;
+#include <unistd.h>
 
-	if (nb < 0)
+void	ft_print_comb(void)
+{
+	char	x;
+	char	y;
+	char	z;
+
+	x = '0';
+	y = '1';
+	z = '2';
+	while (x <= '9')
 	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb / 10 != 0)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		display = nb + 48;
-		write(1, &display, 1);
+		while (y <= '9')
+		{
+			while (z <= '9')
+			{
+				if (x < y && y < z)
+				{
+					write(1, &x, 5);
+				}
+				z++;
+			}
+			y++;
+		}
+		x++;
 	}
 }
-/*
+
 int	main(void)
 {
-	ft_putnbr(42);
-	write(1, "\n", 1);
-	ft_putnbr(-2147483647);
-	write(1, "\n", 1);
-	ft_putnbr(2147483647);
-	write(1, "\n", 1);
+	ft_print_comb();
 	return (0);
 }
-*/
