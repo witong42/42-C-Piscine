@@ -6,7 +6,7 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:33:34 by witong            #+#    #+#             */
-/*   Updated: 2024/03/23 15:42:09 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/23 16:53:25 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,15 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (str[i] && is_whitespace(str[i]) == 1)
 		i++;
-	while ((str[i] && str[i] >= '0' && str[i] <= '9')
-		|| str[i] == '+' || str[i] == '-')
+	while (str[i] && str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign = sign * -1;
-		else if (str[i] == '+')
-		{
-		}
-		else
-			atoi = atoi * 10 + str[i] - 48;
+		i++;
+	}
+	while ((str[i] && str[i] >= '0' && str[i] <= '9'))
+	{
+		atoi = atoi * 10 + str[i] - 48;
 		i++;
 	}
 	return (atoi * sign);
