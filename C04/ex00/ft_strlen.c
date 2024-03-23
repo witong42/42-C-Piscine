@@ -6,7 +6,7 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:02:22 by witong            #+#    #+#             */
-/*   Updated: 2024/03/20 17:05:12 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/23 14:45:11 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
-	return(i);
+	return (i);
 }
