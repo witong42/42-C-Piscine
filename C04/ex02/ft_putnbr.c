@@ -6,12 +6,12 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:32:41 by witong            #+#    #+#             */
-/*   Updated: 2024/03/24 02:35:19 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/24 03:00:11 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
-//
+#include <unistd.h>
+
 void	ft_putnbr(int nb)
 {
 	char	display;
