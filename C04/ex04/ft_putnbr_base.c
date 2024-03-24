@@ -6,12 +6,11 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:34:45 by witong            #+#    #+#             */
-/*   Updated: 2024/03/23 21:26:46 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/24 02:48:42 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int	is_base_invalid(char *base)
 {
@@ -42,7 +41,6 @@ int	is_base_invalid(char *base)
 void	ft_putnbr_base(int nbr, char *base)
 {
 	int	i;
-	int	digit;
 
 	i = 0;
 	if (is_base_invalid(base) == 0)
@@ -61,12 +59,11 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 		else
 		{
-			digit = base[nbr % i];
-			write(1, &digit, 1);
+			write(1, &base[nbr], 1);
 		}
 	}
 }
-
+/*
 int	main(void)
 {
 	ft_putnbr_base(42, "01");
@@ -87,3 +84,4 @@ int	main(void)
 	write(1, "\n", 1);
 	return (0);
 }
+*/

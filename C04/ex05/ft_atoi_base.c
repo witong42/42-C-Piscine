@@ -6,12 +6,12 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:35:55 by witong            #+#    #+#             */
-/*   Updated: 2024/03/24 00:42:05 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/24 02:50:53 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
+//#include <stdio.h>
+//
 int	is_whitespace_and_sign(char *str, int *str_i)
 {
 	int	sign;
@@ -93,7 +93,7 @@ int	ft_atoi_base(char *str, char *base)
 	}
 	return (output * sign);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc == 3)
@@ -102,3 +102,4 @@ int	main(int argc, char **argv)
 	}	
 	return (0);
 }
+*/
