@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/24 01:10:36 by witong            #+#    #+#             */
-/*   Updated: 2024/03/24 03:35:34 by witong           ###   ########.fr       */
+/*   Created: 2024/03/24 06:50:15 by witong            #+#    #+#             */
+/*   Updated: 2024/03/24 07:16:55 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
-	int	i;
+	int	sqrt;
 
-	i = 1;
+	sqrt = 1;
 	if (nb < 0)
 		return (0);
-	else if (nb <= 1)
-		return (1);
-	while (nb > 1)
-	{
-		i *= nb;
-		nb--;
-	}
-	return (i);
+	while (sqrt * sqrt < nb)
+		sqrt++;
+	if (sqrt * sqrt == nb)
+		return (sqrt);
+	else
+		return (0);
 }
 /*
 int	main(void)
 {
-	printf("0:%d\n", ft_iterative_factorial(-10));
-	printf("0:%d\n", ft_iterative_factorial(-1));
-	printf("1:%d\n", ft_iterative_factorial(0));
-	printf("1:%d\n", ft_iterative_factorial(1));
-	printf("3628800:%d\n", ft_iterative_factorial(10));
-	printf("6:%d\n", ft_iterative_factorial(3));
+	printf("10:%d\n", ft_sqrt(100));
+	printf("6:%d\n", ft_sqrt(36));
+	printf("0:%d\n", ft_sqrt(37));
+	printf("100:%d\n", ft_sqrt(10000));
+	printf("0:%d\n", ft_sqrt(10001));
+	printf("2000:%d\n", ft_sqrt(4000000));
+	printf("0:%d\n", ft_sqrt(-36));
 }
 */

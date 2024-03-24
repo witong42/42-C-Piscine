@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/24 01:10:36 by witong            #+#    #+#             */
-/*   Updated: 2024/03/24 03:35:34 by witong           ###   ########.fr       */
+/*   Created: 2024/03/24 03:25:30 by witong            #+#    #+#             */
+/*   Updated: 2024/03/24 03:37:38 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //
-int	ft_iterative_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
-	int	i;
-
-	i = 1;
 	if (nb < 0)
 		return (0);
 	else if (nb <= 1)
 		return (1);
-	while (nb > 1)
-	{
-		i *= nb;
-		nb--;
-	}
-	return (i);
+	else
+		return (nb * ft_recursive_factorial(nb - 1));
 }
 /*
 int	main(void)
 {
-	printf("0:%d\n", ft_iterative_factorial(-10));
-	printf("0:%d\n", ft_iterative_factorial(-1));
-	printf("1:%d\n", ft_iterative_factorial(0));
-	printf("1:%d\n", ft_iterative_factorial(1));
-	printf("3628800:%d\n", ft_iterative_factorial(10));
-	printf("6:%d\n", ft_iterative_factorial(3));
+	printf("0:%d\n", ft_recursive_factorial(-10));
+	printf("0:%d\n", ft_recursive_factorial(-1));
+	printf("1:%d\n", ft_recursive_factorial(0));
+	printf("1:%d\n", ft_recursive_factorial(1));
+	printf("3628800:%d\n", ft_recursive_factorial(10));
+	printf("6:%d\n", ft_recursive_factorial(3));
 }
 */
