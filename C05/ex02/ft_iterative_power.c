@@ -6,12 +6,12 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 05:41:08 by witong            #+#    #+#             */
-/*   Updated: 2024/03/24 05:46:12 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/25 16:52:20 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
+//#include <stdio.h>
+//
 int	ft_iterative_power(int nb, int power)
 {
 	int	i;
@@ -21,8 +21,6 @@ int	ft_iterative_power(int nb, int power)
 		return (0);
 	else if (power == 0)
 		return (1);
-	else if (power == 1)
-		return (nb);
 	while (power > 0)
 	{
 		i *= nb;
@@ -30,7 +28,7 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (i);
 }
-
+/*
 int	main(void)
 {
 	printf("0:%d\n", ft_iterative_power(1, -10));
@@ -40,3 +38,4 @@ int	main(void)
 	printf("100:%d\n", ft_iterative_power(10, 2));
 	printf("216:%d\n", ft_iterative_power(6, 3));
 }
+*/
