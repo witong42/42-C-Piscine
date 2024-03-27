@@ -10,27 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	is_whitespace(char c)
-{
-	if ((c >= 9 && c <= 13) || c == 32)
-	{
-		return (1);
-	}
-	return (0);
-}
-
+//#include <stdio.h>
+//
 int	ft_atoi(char *str)
 {
 	int	i;
-	int	atoi;
+	int	output;
 	int	sign;
 
 	i = 0;
-	atoi = 0;
+	output = 0;
 	sign = 1;
-	while (is_whitespace(str[i]) == 1)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
@@ -40,12 +31,12 @@ int	ft_atoi(char *str)
 	}
 	while ((str[i] >= '0' && str[i] <= '9'))
 	{
-		atoi = atoi * 10 + str[i] - 48;
+		output = output * 10 + str[i] - 48;
 		i++;
 	}
-	return (atoi * sign);
+	return (output * sign);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
@@ -54,3 +45,4 @@ int	main(int argc, char **argv)
 	}	
 	return (0);
 }
+*/
