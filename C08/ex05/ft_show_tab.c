@@ -11,8 +11,11 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_stock_str.h"
 
-void	ft_putstr(char *str);
+t_stock_str	*ft_strs_to_tab(int argc, char **argv);
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
@@ -51,18 +54,26 @@ void	ft_putnbr(int nb)
 	}
 }
 
-void	ft_show_tab(struct s_stock_str *par);
+void	ft_show_tab(struct s_stock_str *par)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	while (par[i].str != 0)
 	{
-		ft_putstr(tab[i].str);
+		ft_putstr(par[i].str);
 		write(1, "\n", 1);
-		ft_putnbr(tab[i].size);
+		ft_putnbr(par[i].size);
 		write(1, "\n", 1);
-		ft_putstr(tab[i].copy);
+		ft_putstr(par[i].copy);
 		write(1, "\n", 1);
+		i++;
 	}
 }
+/*
+int	main(int argc, char **argv)
+{
+	if (argc > 0)
+		ft_show_tab(ft_strs_to_tab(argc, argv));
+}
+*/

@@ -31,7 +31,7 @@ char	*ft_strdup(char *src)
 	i = ft_strlen(src);
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
-		return (((void *0)));
+		return (((void *)0));
 	i = 0;
 	while (src[i])
 	{
@@ -45,13 +45,11 @@ char	*ft_strdup(char *src)
 struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	t_stock_str	*tab;
-	t_stock_str	*ptr;
 	int			i;	
 
-	tab = (t_stock_str *)malloc(ac * sizeof(t_stock_str));
-	ptr = tab;
+	tab = (t_stock_str *)malloc((ac + 1) * sizeof(t_stock_str));
 	if (tab == ((void *)0))
-		return (ptr);
+		return (tab);
 	i = 0;
 	while (i < ac)
 	{
@@ -60,7 +58,6 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		tab[i].copy = ft_strdup(av[i]);
 		i++;
 	}
-	tab[i].str = '\0';
-	tab[i].copy = '\0';
+	tab[i].str = 0;
 	return (tab);
 }
