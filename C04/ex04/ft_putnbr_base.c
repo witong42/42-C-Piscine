@@ -6,7 +6,7 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:34:45 by witong            #+#    #+#             */
-/*   Updated: 2024/03/24 02:48:42 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/27 10:26:46 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_base_invalid(char *base)
 	while (base[i])
 	{
 		if (base[i] == '+' || base[i] == '-'
-				|| base [i] < 33 || base[i] > 126)
+			|| base [i] < 33 || base[i] > 126)
 			return (1);
 		j = i + 1;
 		while (base[j])
@@ -62,7 +62,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 	}
 }
-
+/*
 int	main(void)
 {
 	ft_putnbr_base(42, "01");
@@ -71,29 +71,13 @@ int	main(void)
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "++42");
 	write(1, "\n", 1);
-	ft_putnbr_base(42, "1");
+	ft_putnbr_base(42, "1 2 3");
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "-1234-");
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "0123456789ABCDEF");
 	write(1, "\n", 1);
-	ft_putnbr_base(42, "!@#$%^&");
-	write(1, "\n", 1);
-	ft_putnbr_base(42, "poneyvif");
-	write(1, "\n", 1);
-	write(1, "42:", 3);
-	ft_putnbr_base(42, "0123456789");
-	write(1, "\n2a:", 4);
-	ft_putnbr_base(42, "0123456789abcdef");
-	write(1, "\n-2a:", 5);
-	ft_putnbr_base(-42, "0123456789abcdef");
-	write(1, "\n:", 2);
-	ft_putnbr_base(42, "");
-	write(1, "\n:", 2);
-	ft_putnbr_base(42, "0");
-	write(1, "\n:", 2);
-	ft_putnbr_base(42, "+-0123456789abcdef");
-	write(1, "\n:", 2);
 	ft_putnbr_base(42, "\t0123456789abcdef");
 	return (0);
 }
+*/

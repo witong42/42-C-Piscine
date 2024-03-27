@@ -6,7 +6,7 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:21:07 by witong            #+#    #+#             */
-/*   Updated: 2024/03/25 16:50:29 by witong           ###   ########.fr       */
+/*   Updated: 2024/03/27 11:01:16 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ int	ft_find_next_prime(int nb)
 {
 	if (nb < 2)
 		return (2);
-	else if (nb == 2147483647)
-		return (nb);
-	nb++;
 	while (ft_is_prime(nb) != 1)
 		nb++;
 	return (nb);
@@ -47,7 +44,7 @@ int	ft_find_next_prime(int nb)
 int	main(void)
 {
 	int	i;
-	int	test_cases[] = {2, 3, 5, 7, 13, 15, 71, 97, 23456789, 2147483647, 0};
+	int	test_cases[] = {-4, 1, 16, 28, 55, 15, 71, 97, 23456739, 2147483647, 0};
 
 	i = 0;
 	while (test_cases[i]) 
