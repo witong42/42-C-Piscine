@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include "ft_stock_str.h"
 
-t_stock_str	*ft_strs_to_tab(int argc, char **argv);
+//t_stock_str	*ft_strs_to_tab(int argc, char **argv);
 
 void	ft_putstr(char *str)
 {
@@ -25,7 +25,6 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	str[i] = '\0';
 }
 
 void	ft_putnbr(int nb)
@@ -34,10 +33,10 @@ void	ft_putnbr(int nb)
 
 	if (nb == -2147483648)
 	{
-		write(1, "-214748364", 10);
-		nb = 8;
+		write(1, "-2147483648", 11);
+		return ;
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
 		write(1, "-", 1);
 		nb = -nb;
@@ -45,13 +44,9 @@ void	ft_putnbr(int nb)
 	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
 	}
-	else
-	{
-		display = nb + 48;
-		write(1, &display, 1);
-	}
+	display = nb % 10 + 48;
+	write(1, &display, 1);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
@@ -59,7 +54,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	i;
 
 	i = 0;
-	while (par[i].str != 0)
+	while (par[i].str)
 	{
 		ft_putstr(par[i].str);
 		write(1, "\n", 1);
