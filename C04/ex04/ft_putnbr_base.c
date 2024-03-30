@@ -22,8 +22,7 @@ int	is_base_invalid(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-'
-			|| base [i] < 33 || base[i] > 126)
+		if (base[i] == '+' || base[i] == '-')
 			return (1);
 		j = i + 1;
 		while (base[j])
@@ -44,40 +43,50 @@ void	ft_putnbr_base(int nbr, char *base)
 	i = 0;
 	if (is_base_invalid(base) == 0)
 	{
-		if (nbr < 0)
+		while (base[i])
+			i++;
+		if (nbr == -2147483648)
+		{
+			write (1, "-", 1);
+			ft_putnbr_base(-(nbr / i), base);
+			write(1, &base[-(nbr % i)], 1);
+			return ;
+		}
+		else if (nbr < 0)
 		{
 			write(1, "-", 1);
 			nbr = -nbr;
 		}
-		while (base[i])
-			i++;
 		if (nbr >= i)
 		{
 			ft_putnbr_base(nbr / i, base);
-			ft_putnbr_base(nbr % i, base);
 		}
-		else
-		{
-			write(1, &base[nbr], 1);
-		}
+		write(1, &base[nbr % i], 1);
 	}
 }
 /*
 int	main(void)
 {
+	ft_putnbr_base(-12, "01");
+	write(1, "\n", 1);
+	ft_putnbr_base(40, "poneyvif");
+	write(1, "\n", 1);
+	ft_putnbr_base(-2147483648, "012345678");
+	write(1, "\n", 1);
+	ft_putnbr_base(53, "0123456789abcdef");
+	write(1, "\n", 1);
 	ft_putnbr_base(42, "01");
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "0202");
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "++42");
 	write(1, "\n", 1);
-	ft_putnbr_base(42, "1 2 3");
+	ft_putnbr_base(42, " 123");
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "-1234-");
 	write(1, "\n", 1);
 	ft_putnbr_base(42, "0123456789ABCDEF");
 	write(1, "\n", 1);
-	ft_putnbr_base(42, "\t0123456789abcdef");
 	return (0);
 }
 */
