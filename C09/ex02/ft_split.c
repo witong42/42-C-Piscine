@@ -6,19 +6,19 @@
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:16:11 by witong            #+#    #+#             */
-/*   Updated: 2024/04/01 19:46:48 by witong           ###   ########.fr       */
+/*   Updated: 2024/04/02 14:10:10 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-
+//#include <stdio.h>
+//
 int	is_sep(char *charset, char c)
 {
 	int	i;
 
 	i = 0;
-	if (c  == '\0')
+	if (c == '\0')
 		return (1);
 	while (charset[i])
 	{
@@ -38,8 +38,11 @@ int	count_words(char *str, char *charset)
 	w_count = 0;
 	while (str[c_count])
 	{
-		if (is_sep(charset, str[c_count]) == 0 && is_sep(charset, str[c_count + 1]) == 1)
+		if (is_sep(charset, str[c_count]) == 0
+			&& is_sep(charset, str[c_count + 1]) == 1)
+		{
 			w_count++;
+		}
 		c_count++;
 	}
 	return (w_count);
@@ -100,7 +103,7 @@ char	**ft_split(char *str, char *charset)
 	split(array, str, charset);
 	return (array);
 }
-
+/*
 int	main(int ac, char **av)
 {
 	int		i;
@@ -126,3 +129,4 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+*/
