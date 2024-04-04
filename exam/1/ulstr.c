@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ulstr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 14:38:57 by witong            #+#    #+#             */
-/*   Updated: 2024/04/02 18:35:59 by witong           ###   ########.fr       */
+/*   Created: 2024/04/02 19:02:48 by witong            #+#    #+#             */
+/*   Updated: 2024/04/02 19:09:29 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//
-char	*ft_strcpy(char *dest, char *src)
+#include <unistd.h>
+
+int	main(int ac, char **av)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	if (ac == 2)
 	{
-		dest[i] = src[i];
-		i++;
+		while (av[1][i])
+		{
+			if (av[1][i] >= 'a' && av[1][i] <= 'z')
+				av[1][i] -= 32;
+			else if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+				av[1][i] += 32;
+			write(1, &av[1][i], 1);
+			i++;
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-/*
-int	main(void)
-{
-	char	str_dest[] = "Piscine 42\n";
-	char	str_src[] = "Hello World!\n";
-
-	ft_strcpy(str_dest, str_src);
-	printf("%s", str_dest);
+	write(1, "\n", 1);
 	return (0);
 }
-*/

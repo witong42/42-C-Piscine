@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 14:38:57 by witong            #+#    #+#             */
-/*   Updated: 2024/04/02 18:35:59 by witong           ###   ########.fr       */
+/*   Created: 2024/04/02 18:16:27 by witong            #+#    #+#             */
+/*   Updated: 2024/04/02 18:42:02 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//
-char	*ft_strcpy(char *dest, char *src)
+#include <unistd.h>
+
+void	repeat_alpha(char *str)
 {
 	int	i;
+	int	index;
 
 	i = 0;
-	while (src[i])
+	while (str[i])
 	{
-		dest[i] = src[i];
+		index = 0;
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			index = str[i] - 'a';
+		}
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			index = str[i] - 'A';
+		}
+		while (index >= 0)
+		{
+			write(1, &str[i], 1);
+			index--;
+		}
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
 }
-/*
-int	main(void)
-{
-	char	str_dest[] = "Piscine 42\n";
-	char	str_src[] = "Hello World!\n";
 
-	ft_strcpy(str_dest, str_src);
-	printf("%s", str_dest);
-	return (0);
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		repeat_alpha(av[1]);
+	}
+	write(1, "\n", 1);
+	return (0);	
 }
-*/

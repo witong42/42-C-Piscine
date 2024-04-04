@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 14:38:57 by witong            #+#    #+#             */
-/*   Updated: 2024/04/02 18:35:59 by witong           ###   ########.fr       */
+/*   Created: 2024/04/02 18:14:55 by witong            #+#    #+#             */
+/*   Updated: 2024/04/02 18:16:17 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
+	while (str[i])
 		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
-/*
-int	main(void)
-{
-	char	str_dest[] = "Piscine 42\n";
-	char	str_src[] = "Hello World!\n";
-
-	ft_strcpy(str_dest, str_src);
-	printf("%s", str_dest);
-	return (0);
-}
-*/

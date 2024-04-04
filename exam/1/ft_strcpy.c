@@ -5,34 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 14:38:57 by witong            #+#    #+#             */
-/*   Updated: 2024/04/02 18:35:59 by witong           ###   ########.fr       */
+/*   Created: 2024/04/02 17:42:45 by witong            #+#    #+#             */
+/*   Updated: 2024/04/02 18:10:01 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//
-char	*ft_strcpy(char *dest, char *src)
+#include <stdio.h>
+
+char	*ft_strcpy(char *s1, char *s2)
 {
-	int	i;
+	int 	i;
 
 	i = 0;
-	while (src[i])
+	while (s2[i])
 	{
-		dest[i] = src[i];
+		s1[i] = s2[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	s1[i] = '\0';
+	return (s1);
 }
-/*
+
 int	main(void)
 {
-	char	str_dest[] = "Piscine 42\n";
-	char	str_src[] = "Hello World!\n";
+	char str[15] = "Helloworld !\n";
 
-	ft_strcpy(str_dest, str_src);
-	printf("%s", str_dest);
+	printf("%s", str);
+	ft_strcpy(str, "I love cheese\n");
+	printf("%s", str);
 	return (0);
 }
-*/

@@ -1,46 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   search_and_replace.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: witong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 12:10:31 by witong            #+#    #+#             */
-/*   Updated: 2024/03/21 12:37:54 by witong           ###   ########.fr       */
+/*   Created: 2024/04/02 18:47:03 by witong            #+#    #+#             */
+/*   Updated: 2024/04/02 18:58:37 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_comb(void)
+void	snr(char *str, char letter, char replace)
 {
-	char	x;
-	char	y;
-	char	z;
+	int	i;
 
-	x = '0';
-	y = '1';
-	z = '2';
-	while (x <= '9')
+	i = 0;
+	while (str[i])
 	{
-		while (y <= '9')
+		if (str[i] == letter)
 		{
-			while (z <= '9')
-			{
-				if (x < y && y < z)
-				{
-					write(1, &x, 5);
-				}
-				z++;
-			}
-			y++;
+			str[i] = replace;
 		}
-		x++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	ft_print_comb();
+	if (ac == 4)
+	{
+		if (av[2][1] == '\0' && av[3][1] == '\0')
+			snr(av[1], av[2][0], av[3][0]);
+	}
+	write(1, "\n", 1);
 	return (0);
 }
